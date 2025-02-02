@@ -43,11 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exercise2\MethodsForExTwo.cs" />
+    <Compile Include="Exercise2\MyGenericList.cs" />
+    <Compile Include="Exericse1\MethodsForExOne.cs" />
     <Compile Include="IInit.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="ItemComparer.cs" />
     <Compile Include="MilkProduct.cs" />
-    <Compile Include="MyStack.cs" />
+    <Compile Include="Exericse1\MyStack.cs" />
     <Compile Include="MyConverter.cs" />
     <Compile Include="Seller.cs" />
     <Compile Include="Product.cs" />

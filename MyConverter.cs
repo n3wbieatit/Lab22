@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 
 namespace Lab22
 {
@@ -38,6 +37,13 @@ namespace Lab22
             if (_item.GetType() != typeof(Seller))
             {
                 Item tempItem = (Item)_item;
+                if (tempItem.Price > price)
+                    tempItem.Show();
+            }
+            else
+            {
+                Seller tempSeller = (Seller)_item;
+                Item tempItem = tempSeller.Item;
                 if (tempItem.Price > price)
                     tempItem.Show();
             }

@@ -8,7 +8,7 @@ namespace Lab22
 
         private string _name;
         private int _age;
-        private string _itemName;
+        private Item _item;
 
         #endregion
 
@@ -18,14 +18,14 @@ namespace Lab22
         {
             _name = "Tom";
             _age = 18;
-            _itemName = new Item().Name;
+            _item = new Item();
         }
 
-        public Seller(string name, int age, string itemName)
+        public Seller(string name, int age, Item item)
         {
             _name = name;
             _age = age;
-            _itemName = itemName;
+            _item = item;
         }
 
         #endregion
@@ -50,10 +50,10 @@ namespace Lab22
             }
         }
 
-        public string ItemName
+        public Item Item
         {
-            get { return _itemName; }
-            set { _itemName = value; }
+            get { return _item; }
+            set { _item = value; }
         }
 
         #endregion
@@ -61,13 +61,13 @@ namespace Lab22
         public object Init()
         {
             Random rnd = new Random();
-            Seller p = new Seller("Bob", rnd.Next(1, 100), new Item().Name);
+            Seller p = new Seller("Bob", rnd.Next(1, 100), new Item());
             return p;
         }
 
         public void Show()
         {
-            Console.WriteLine("Name: {0} \t Age: {1} \t Item: {2}", _name, _age, _itemName);
+            Console.WriteLine("Name: {0} \t Age: {1} \t Item: {2}", _name, _age, _item.Name);
         }
 
         public int CompareTo(object obj)
@@ -87,7 +87,7 @@ namespace Lab22
         // Метод глубокого копирования
         public object Clone()
         {
-            return new Seller(Name, Age, new Item().Name);
+            return new Seller(Name, Age, new Item());
         }
     }
 }

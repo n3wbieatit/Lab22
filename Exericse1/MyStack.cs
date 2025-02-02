@@ -39,7 +39,6 @@ namespace Lab22
             Size = size;
             _top = top;
             _topIndex = topIndex;
-            Size = size;
         }
 
         public void Push(object item)
