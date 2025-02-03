@@ -11,6 +11,14 @@ namespace Lab22
             get { return _count; }
         }
 
+        public Item BaseItem
+        {
+            get
+            {
+                return new Item(Name, Price, Date, StorageLife, Type, ShopDep);
+            }
+        }
+
         #region Конструкторы
         public Toy() : base()
         {
@@ -59,6 +67,11 @@ namespace Lab22
         public override void Show()
         {
             base.Show();
+        }
+
+        public override object Clone()
+        {
+            return new Toy(Name, Price, Date, StorageLife);
         }
     }
 }

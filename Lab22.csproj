@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="Exercise2\MethodsForExTwo.cs" />
     <Compile Include="Exercise2\MyGenericList.cs" />
+    <Compile Include="Exercise3\MethodsForExThree.cs" />
+    <Compile Include="Exercise3\TestCollections.cs" />
     <Compile Include="Exericse1\MethodsForExOne.cs" />
     <Compile Include="IInit.cs" />
     <Compile Include="Item.cs" />

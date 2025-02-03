@@ -10,11 +10,12 @@ namespace Lab22
             Console.WriteLine("Доступные части программы:");
             Console.WriteLine("1. Первая часть;");
             Console.WriteLine("2. Вторая часть;");
+            Console.WriteLine("3. Треться часть;");
             Console.WriteLine("0. Выход.");
             while (true)
             {
                 Console.Write("\nВведите номер -> ");
-                if (int.TryParse(Console.ReadLine(), out choice) && choice >= 0 && choice <= 2)
+                if (int.TryParse(Console.ReadLine(), out choice) && choice >= 0 && choice <= 3)
                     break;
                 Console.WriteLine("Ошибка ввода! Попробуйте еще раз!");
             }
@@ -29,6 +30,9 @@ namespace Lab22
                         Exercise2WithoutSeller();
                     else if (choice == 2)
                         Exercise2WithSeller();
+                    break;
+                case 3:
+                    Exercise3();
                     break;
                 default:
                     break;
@@ -285,6 +289,55 @@ namespace Lab22
                         break;
                 }
             }
+        }
+
+        static void Exercise3()
+        {
+            TestCollections testCollections = new TestCollections();
+            int choice = 0;
+            Menu3();
+            while (true)
+            {
+                Console.Write("Введите значение -> ");
+                if (int.TryParse(Console.ReadLine(), out choice) && choice >= 0 && choice <= 8)
+                    break;
+                Console.WriteLine("ERROR");
+            }
+            switch (choice)
+            {
+                case 1:
+                    testCollections.ShowStringList(); break;
+                case 2:
+                    testCollections.ShowList(); break;
+                case 3:
+                    testCollections.ShowStringDict(); break;
+                case 4:
+                    testCollections.ShowDict(); break;
+                case 5:
+                    MethodsForExThree.SearchInLinkedLinkStringMethod(testCollections); break;
+                case 6:
+                    MethodsForExThree.SearchInLinkedLinkMethod(testCollections); break;
+                case 7:
+                    MethodsForExThree.SearchInDictStringMethod(testCollections); break;
+                case 8:
+                    MethodsForExThree.SearchInDictMethod(testCollections); break;
+                default:
+                    break;
+            }
+            Console.ReadKey();
+        }
+
+        static void Menu3()
+        {
+            Console.WriteLine("1. Вывод всех элементов LinkedList<string>;");
+            Console.WriteLine("2. Вывод всех элементов LinkedList<Toy>;");
+            Console.WriteLine("3. Вывод всех элементов Dictionary<string, Toy>;");
+            Console.WriteLine("4. Вывод всех элементов Dictionary<Item, Toy>;");
+            Console.WriteLine("5. Проверка поиска в LinkedList<string>;");
+            Console.WriteLine("6. Проверка поиска в LinkedList<Toy>;");
+            Console.WriteLine("7. Проверка поиска в Dictionary<string, Toy>;");
+            Console.WriteLine("8. Проверка поиска в Dictionary<Item, Toy>;");
+            Console.WriteLine("0. Выход");
         }
     }
 }
